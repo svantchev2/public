@@ -1,0 +1,633 @@
+{
+  "title": "Dashboard v1.5-d",
+  "version": "2.4",
+  "settings": {
+    "pagenumber": 0,
+    "editable": true,
+    "fullscreenEnabled": false,
+    "parameters": {
+      "neodash_person_name": "Neo4j",
+      "neodash_tweet_info": {
+        "low": 894906369,
+        "high": 315257601
+      },
+      "neodash_tweet_url": "https://twitter.com/i/web/status/1352796210650886145",
+      "neodash_user_pic": "http://pbs.twimg.com/profile_images/1266076896644694016/d053brzD_normal.jpg",
+      "neodash_user_name": "Lakshmi",
+      "neodash_user_name_display": ""
+    },
+    "extensions": [
+      "core",
+      "actions"
+    ],
+    "theme": "light"
+  },
+  "pages": [
+    {
+      "title": "Graph Health",
+      "reports": [
+        {
+          "id": "5c5f9a33-84b8-46e5-8632-c6d5d9e9de59",
+          "title": "Hi there 👋",
+          "query": "This is graph health data. For Lore-specific info, checkout the rest of the tabs.\n \n",
+          "width": 8,
+          "height": 4,
+          "x": 0,
+          "y": 0,
+          "type": "text",
+          "selection": {},
+          "settings": {}
+        },
+        {
+          "id": "3d894047-d830-49ee-bfd6-805540a22011",
+          "title": "Schema",
+          "query": "CALL db.schema.visualization()",
+          "width": 16,
+          "height": 4,
+          "x": 8,
+          "y": 0,
+          "type": "graph",
+          "selection": {
+            "Interest": "name",
+            "LoreVariation": "name",
+            "Comment": "name",
+            "User": "name",
+            "LoreBase": "name",
+            "Message": "name",
+            "Deprecated": "name",
+            "Post": "name",
+            "Country": "name",
+            "Attachment": "name",
+            "Conversation": "name",
+            "Person": "name",
+            "UNFAVORITES": "name",
+            "SHARES": "name",
+            "INTERESTED_IN": "name",
+            "EDITS": "name",
+            "REPLIES_TO": "name",
+            "LEAVES": "name",
+            "LIVES_IN": "name",
+            "HIGHLIGHTS": "name",
+            "CREATES": "name",
+            "MENTIONS": "name",
+            "EXPLORES": "name",
+            "UNEXPLORES": "name",
+            "VARIATION_OF": "name",
+            "INVITES": "name",
+            "FAVORITES": "name",
+            "HAS": "name",
+            "QUOTES": "name",
+            "DELETES": "name",
+            "READS": "name",
+            "JOINS": "name"
+          },
+          "settings": {
+            "frozen": false,
+            "nodePositions": {},
+            "fullscreenEnabled": true
+          },
+          "schema": [
+            [
+              "Interest",
+              "name",
+              "indexes",
+              "constraints"
+            ],
+            [
+              "LoreVariation",
+              "name",
+              "indexes",
+              "constraints"
+            ],
+            [
+              "Comment",
+              "name",
+              "indexes",
+              "constraints"
+            ],
+            [
+              "User",
+              "name",
+              "indexes",
+              "constraints"
+            ],
+            [
+              "LoreBase",
+              "name",
+              "indexes",
+              "constraints"
+            ],
+            [
+              "Message",
+              "name",
+              "indexes",
+              "constraints"
+            ],
+            [
+              "Deprecated",
+              "name",
+              "indexes",
+              "constraints"
+            ],
+            [
+              "Post",
+              "name",
+              "indexes",
+              "constraints"
+            ],
+            [
+              "Country",
+              "name",
+              "indexes",
+              "constraints"
+            ],
+            [
+              "Attachment",
+              "name",
+              "indexes",
+              "constraints"
+            ],
+            [
+              "Conversation",
+              "name",
+              "indexes",
+              "constraints"
+            ],
+            [
+              "Person",
+              "name",
+              "indexes",
+              "constraints"
+            ],
+            [
+              "UNFAVORITES",
+              "name"
+            ],
+            [
+              "SHARES",
+              "name"
+            ],
+            [
+              "INTERESTED_IN",
+              "name"
+            ],
+            [
+              "EDITS",
+              "name"
+            ],
+            [
+              "REPLIES_TO",
+              "name"
+            ],
+            [
+              "LEAVES",
+              "name"
+            ],
+            [
+              "LIVES_IN",
+              "name"
+            ],
+            [
+              "HIGHLIGHTS",
+              "name"
+            ],
+            [
+              "CREATES",
+              "name"
+            ],
+            [
+              "MENTIONS",
+              "name"
+            ],
+            [
+              "EXPLORES",
+              "name"
+            ],
+            [
+              "UNEXPLORES",
+              "name"
+            ],
+            [
+              "VARIATION_OF",
+              "name"
+            ],
+            [
+              "INVITES",
+              "name"
+            ],
+            [
+              "FAVORITES",
+              "name"
+            ],
+            [
+              "HAS",
+              "name"
+            ],
+            [
+              "QUOTES",
+              "name"
+            ],
+            [
+              "DELETES",
+              "name"
+            ],
+            [
+              "READS",
+              "name"
+            ],
+            [
+              "JOINS",
+              "name"
+            ]
+          ]
+        },
+        {
+          "id": "dbbca02f-b3db-4e6b-b681-6c6440b112b0",
+          "title": "Nodes Count",
+          "query": "match (x)\nreturn count(x)\n\n\n",
+          "width": 6,
+          "height": 4,
+          "x": 0,
+          "y": 4,
+          "type": "value",
+          "selection": {},
+          "settings": {
+            "verticalAlign": "middle",
+            "textAlign": "center"
+          },
+          "database": "neo4j",
+          "schema": []
+        },
+        {
+          "id": "99026889-fe1b-4288-b920-2782e4f896c8",
+          "title": "Nodes by label",
+          "query": "match (x)\nreturn labels(x) as Labels, count(x) as Total\n\n\n",
+          "width": 6,
+          "height": 4,
+          "x": 6,
+          "y": 4,
+          "type": "pie",
+          "selection": {
+            "index": "Labels",
+            "value": "Total",
+            "key": "(none)"
+          },
+          "settings": {
+            "refreshButtonEnabled": false,
+            "fullscreenEnabled": true,
+            "enableArcLinkLabels": true,
+            "legend": false
+          },
+          "schema": []
+        },
+        {
+          "id": "b781a4b2-f776-4e4c-9e42-0b31a0945ccc",
+          "title": "Relationship Count",
+          "query": "match ()-[e]->()\nreturn count(e)",
+          "width": 6,
+          "height": 4,
+          "x": 12,
+          "y": 4,
+          "type": "value",
+          "selection": {},
+          "settings": {
+            "textAlign": "center",
+            "verticalAlign": "middle"
+          },
+          "schema": []
+        },
+        {
+          "id": "72e12070-19f8-48dd-b4c8-262f8b0b5e5e",
+          "title": "Relationship by type",
+          "query": "match ()-[r]->()\nreturn type(r) as Relationship, count(r) as Total",
+          "width": 6,
+          "height": 4,
+          "x": 18,
+          "y": 4,
+          "type": "bar",
+          "selection": {
+            "index": "Relationship",
+            "value": "Total",
+            "key": "(none)"
+          },
+          "settings": {
+            "marginBottom": 80,
+            "marginRight": 35
+          },
+          "schema": []
+        }
+      ]
+    },
+    {
+      "title": "Lore View",
+      "reports": [
+        {
+          "title": "Lore data",
+          "query": "Our test NeoDash Dasboard. At the moment it is using the Twitter data, but labels are contextualized for Lore.",
+          "width": 8,
+          "height": 4,
+          "x": 0,
+          "y": 0,
+          "type": "text",
+          "selection": {},
+          "settings": {},
+          "id": "68674a0b-36e6-498c-8e68-f40a1cbfa04c"
+        },
+        {
+          "title": "Total Posts",
+          "query": "MATCH (n:Post)\nRETURN COUNT(n) as Total",
+          "width": 8,
+          "height": 2,
+          "x": 0,
+          "y": 4,
+          "type": "value",
+          "selection": {},
+          "settings": {
+            "verticalAlign": "middle",
+            "textAlign": "center"
+          },
+          "id": "9542b580-ed7c-4cd2-9475-1440e1ed7cbd"
+        },
+        {
+          "title": "Total Users",
+          "query": "MATCH (n:User)\nRETURN COUNT(n)\n\n\n",
+          "width": 8,
+          "height": 2,
+          "x": 0,
+          "y": 6,
+          "type": "value",
+          "selection": {},
+          "settings": {
+            "textAlign": "center",
+            "verticalAlign": "middle"
+          },
+          "id": "a23e9c3f-e117-4cf5-83fe-a8ecca32e5ba"
+        },
+        {
+          "title": "Relationship types",
+          "query": "MATCH ()-[r]->()\nRETURN type(r) as Relationship, COUNT(r) as Total\n\n",
+          "width": 8,
+          "height": 4,
+          "x": 16,
+          "y": 0,
+          "type": "bar",
+          "selection": {
+            "index": "Relationship",
+            "value": "Total",
+            "key": "(none)"
+          },
+          "settings": {
+            "marginBottom": 80,
+            "marginRight": 50
+          },
+          "id": "43c7b59a-fb80-484e-9d19-d2b20ca69c08"
+        },
+        {
+          "title": "Top 5 users with most posts",
+          "query": "MATCH (t:Post)<-[:CREATES]-(u:User)\nRETURN u.screen_name as User, COUNT(t) as Posts\nORDER BY Posts\nDESC LIMIT 5\n\n\n",
+          "width": 16,
+          "height": 4,
+          "x": 8,
+          "y": 4,
+          "type": "pie",
+          "selection": {
+            "index": "User",
+            "value": "Posts",
+            "key": "(none)"
+          },
+          "settings": {
+            "marginRight": 60,
+            "marginLeft": 60,
+            "marginTop": 40,
+            "marginBottom": 60,
+            "legend": true,
+            "enableArcLinkLabels": false
+          },
+          "id": "f4ba0834-33fb-4737-b81f-eb04521264c4"
+        },
+        {
+          "title": "Posts by Month",
+          "query": "MATCH (:Post)<-[c:CREATES]-(:User)\nWHERE c.first_transaction_datetime_utc is not null\nWITH datetime(c.first_transaction_datetime_utc).month as nMonth, apoc.temporal.format(c.first_transaction_datetime_utc, \"MMMM\") as month\nwith nMonth, month, count(nMonth) as Total\nRETURN nMonth, Total\nORDER by nMonth asc",
+          "width": 8,
+          "height": 4,
+          "x": 8,
+          "y": 0,
+          "type": "line",
+          "selection": {
+            "x": "nMonth",
+            "value": [
+              "Total"
+            ]
+          },
+          "settings": {
+            "curve": "basis",
+            "marginTop": 50,
+            "marginLeft": 55
+          },
+          "id": "937c7ff0-f4b6-4e7c-82a0-1e0b90fa4930"
+        },
+        {
+          "title": "Total Lores",
+          "query": "MATCH (n:LoreBase)\nRETURN COUNT(n) as Lores",
+          "width": 8,
+          "height": 2,
+          "x": 0,
+          "y": 10,
+          "type": "value",
+          "selection": {},
+          "settings": {
+            "textAlign": "center",
+            "verticalAlign": "middle"
+          },
+          "id": "c3995c9d-cfff-4273-ab52-c48d0632c028"
+        },
+        {
+          "title": "Total Comments",
+          "query": "MATCH (n:Comment)\nRETURN COUNT(n) as Comments",
+          "width": 8,
+          "height": 2,
+          "x": 0,
+          "y": 8,
+          "type": "value",
+          "selection": {},
+          "settings": {
+            "textAlign": "center",
+            "verticalAlign": "middle"
+          },
+          "id": "222dc7ed-8f46-4efb-8c3e-96d40366a47a"
+        },
+        {
+          "title": "Posts distribution by lore",
+          "query": "MATCH (l:LoreBase)-[h:HIGHLIGHTS]->(p:Post)\nRETURN l.lore_title as Lore, COUNT(p) as Posts\nORDER BY Posts\nDESC LIMIT 10",
+          "width": 16,
+          "height": 4,
+          "x": 8,
+          "y": 8,
+          "type": "table",
+          "selection": {},
+          "settings": {
+            "marginTop": 45,
+            "legend": false,
+            "enableArcLinkLabels": true,
+            "arcLabelsFontSize": 12,
+            "marginRight": 55,
+            "marginBottom": 55
+          },
+          "id": "ecae9d92-0e47-44e8-96cc-779da873e663",
+          "schema": []
+        }
+      ]
+    },
+    {
+      "title": "User View",
+      "reports": [
+        {
+          "title": "Top 10 users",
+          "query": "MATCH (t:Post)<-[:CREATES]-(u:User)\nRETURN u.screen_name as User, COUNT(t) as Posts\nORDER BY Posts desc\nLIMIT 10\n\n",
+          "width": 6,
+          "height": 4,
+          "x": 8,
+          "y": 0,
+          "type": "table",
+          "selection": {},
+          "settings": {
+            "actionsRules": [
+              {
+                "condition": "Click",
+                "field": "User",
+                "value": "User",
+                "customization": "set variable",
+                "customizationValue": "user_name"
+              }
+            ]
+          },
+          "id": "9c2de9ef-0b0d-407a-b515-8a0e71a5af3b"
+        },
+        {
+          "title": "Graph view for $neodash_user_name posts and lores",
+          "query": "MATCH path=(u:User)--(p:Post)--(b:LoreBase)\nWHERE u.screen_name = $neodash_user_name\nRETURN path\n\n\n",
+          "width": 10,
+          "height": 4,
+          "x": 14,
+          "y": 0,
+          "type": "graph",
+          "selection": {
+            "User": "name",
+            "Post": "(label)",
+            "LoreBase": "(label)"
+          },
+          "settings": {
+            "nodeColorScheme": "paired",
+            "nodePositions": {},
+            "fullscreenEnabled": true
+          },
+          "id": "0334604d-9fd2-4bda-82f5-bc5bff5e9cc9",
+          "schema": [
+            [
+              "User",
+              "ref_user_id",
+              "gender",
+              "birth_date",
+              "state_1",
+              "street_address_1",
+              "city_1",
+              "global_person_id",
+              "screen_name",
+              "account_created_datetime_utc",
+              "test_account_flag",
+              "zip_code_1",
+              "is_sequlae_employee_flag",
+              "transaction_datetime_utc"
+            ],
+            [
+              "Post",
+              "discussion_subject",
+              "post_id",
+              "discussion_message"
+            ],
+            [
+              "LoreBase",
+              "lore_id",
+              "lore_summary",
+              "lore_title"
+            ]
+          ]
+        },
+        {
+          "title": "About this page",
+          "query": "On this page, you can select a person from a table, and dynamically view other visualizations update.\n\nTo start, select a user from the \"Top 10 users\" widget.\n\n",
+          "width": 8,
+          "height": 4,
+          "x": 0,
+          "y": 0,
+          "type": "text",
+          "selection": {},
+          "settings": {
+            "replaceGlobalParameters": true
+          },
+          "id": "ef27ad4d-a6b1-4608-8142-c3f1e96ec56a"
+        },
+        {
+          "title": "Posts by $neodash_user_name",
+          "query": "MATCH path=(p:User)-[c:CREATES]->(m:Post)\nWHERE p.screen_name = $neodash_user_name\nRETURN \napoc.temporal.format(c.first_transaction_datetime_utc, \"MM/dd/YYYY hh:mm\") as Creation_Date\n, m.discussion_subject as Text\norder by Creation_Date desc",
+          "width": 14,
+          "height": 4,
+          "x": 0,
+          "y": 6,
+          "type": "table",
+          "selection": {},
+          "settings": {
+            "columnWidths": "[3,7]",
+            "compact": false,
+            "fullscreenEnabled": true
+          },
+          "id": "2d86c1b2-ec01-4103-b446-ecb34c486d00"
+        },
+        {
+          "title": "The highest posted lores by $neodash_user_name",
+          "query": "MATCH (u:User)--(p:Post)--(b:LoreBase)\nWHERE u.screen_name = $neodash_user_name\nRETURN b.lore_title as Lore, count(b) as Frequency\norder by Frequency desc",
+          "width": 10,
+          "height": 4,
+          "x": 14,
+          "y": 4,
+          "type": "table",
+          "selection": {},
+          "settings": {
+            "labelProperty": "weight",
+            "columnWidths": "[6,4]"
+          },
+          "id": "8f6ca369-cc10-40c4-aeb1-d48fd3b81659"
+        }
+      ]
+    }
+  ],
+  "parameters": {},
+  "extensions": {
+    "advanced-charts": {
+      "active": true
+    },
+    "styling": {
+      "active": true
+    },
+    "active": true,
+    "activeReducers": [
+      "DASHBOARD/EXTENSIONS/QUERY_TRANSLATOR/"
+    ],
+    "actions": {
+      "active": true
+    },
+    "query-translator": {
+      "active": true,
+      "modelProvider": "OpenAI",
+      "settings": {
+        "modelType": "gpt-3.5-turbo"
+      },
+      "lastMessages": {
+        "3": {
+          "fcebd394-6a70-41d5-a2f4-052b06584c10": "Show me users who have tweeted less than three times."
+        }
+      }
+    }
+  },
+  "uuid": "b3c3e205-1ab6-4977-83bc-15e1f6f6d5aa"
+}
